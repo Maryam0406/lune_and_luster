@@ -1,0 +1,24 @@
+.hero { display: grid; grid-template-columns: 1fr 1fr; min-height: min(82vh, 660px); background: var(--sand); }
+.hero-images { position: relative; overflow: hidden; }
+.hero-img { position: absolute !important; inset: 0; opacity: 0; transition: opacity 1.2s ease; }
+.hero-img.active { opacity: 1; }
+.hero-img img { transform: scale(1.08); transition: transform 8s ease-out; }
+.hero-img.active img { transform: scale(1); }
+
+.hero-content { position: relative; display: flex; flex-direction: column; justify-content: center; padding: 3rem clamp(2rem, 6vw, 6rem); background: linear-gradient(160deg, #f6efe6, #efe4d6); }
+.hero-text { animation: rise 0.9s ease both; }
+@keyframes rise { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+.hero-text h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(3rem, 7vw, 5.6rem); line-height: 1; margin-bottom: 1.2rem; }
+.hero-text p { color: var(--muted); font-size: 1.05rem; max-width: 420px; margin-bottom: 2rem; }
+.hero-buttons { display: flex; gap: 0.9rem; flex-wrap: wrap; }
+
+.hero-controls { position: absolute; left: clamp(2rem, 6vw, 6rem); bottom: 2.2rem; display: flex; align-items: center; gap: 1.4rem; }
+.hero-controls button { font-size: 0.75rem; letter-spacing: 0.15em; color: var(--muted); padding-bottom: 4px; border-bottom: 1px solid transparent; transition: 0.3s; }
+.hero-controls button.on { color: var(--ink); border-color: var(--gold); }
+.hero-controls button:hover { color: var(--gold-dark); }
+
+@media (max-width: 800px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-images { height: 55vh; }
+  .hero-content { padding: 2.5rem 1.5rem 5rem; }
+}

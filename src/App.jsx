@@ -1,12 +1,14 @@
-import AnnouncementBar from './components/AnnouncementBar';
+
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Categories from './components/Categories';
 export default function App() {
   return (
     <>
-      <AnnouncementBar />
+   
       <Navbar />
       <Hero />
+      <Categories />
     </>
   );
 }

@@ -10,7 +10,7 @@ export default function Media({ src, alt = '', className = '', tone = 0 }) {
     const [failed, setFailed] = useState(false);
     return (
         <div className={`media ${className}`} style={{
-            position: 'relatiive',
+            position: 'relative',
             overflow: 'hidden',
             background: tones[tone % tones.length]
         }}>

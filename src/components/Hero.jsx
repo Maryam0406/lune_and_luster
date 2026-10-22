@@ -6,10 +6,10 @@ import './Hero.css';
 const INTERVAL = 6000; // 6 seconds per slide
 
 const slides = [
-  { eyebrow: 'Lune & Luster', title: 'Jewellery That Tells Your Story', image: './images/hero-1.jpg' },
+  { eyebrow: 'Lune & Luster', title: 'Jewellery That Tells Your Story', image: './images/hero-1.webp' },
   { eyebrow: 'Engraved with love', title: 'Words That Last Forever', image: './images/hero-2.jpg' },
-  { eyebrow: 'For the ones you love', title: 'Made For Two', image: './images/hero-3.jpg' },
-  { eyebrow: 'Gifts with meaning', title: 'Wrapped With Love', image: './images/hero-4.jpg' },
+  { eyebrow: 'For the ones you love', title: 'Made For Two', image: './images/hero-3.avif' },
+  { eyebrow: 'Gifts with meaning', title: 'Wrapped With Love', image: './images/hero-4.avif' },
 ];
 
 export default function Hero() {

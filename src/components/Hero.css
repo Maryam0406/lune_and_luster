@@ -1,5 +1,3 @@
-/* Full-screen hero: fills the viewport below the announcement bar (36px)
-   and slides up underneath the transparent navbar (76px, 66px on mobile). */
 .hero {
   position: relative;
   height: calc(100vh - 36px);
@@ -18,7 +16,6 @@
 .hero-img img { transform: scale(1.1); transition: transform 8s ease-out; }
 .hero-img.active img { transform: scale(1); }   /* slow zoom-out */
 
-/* dark gradient so white text stays readable on any photo */
 .hero-shade {
   position: absolute; inset: 0; pointer-events: none;
   background:
@@ -56,7 +53,6 @@
 .hero-btn-fill { background: var(--gold); border-color: var(--gold); }
 .hero-btn-fill:hover { background: var(--gold-dark); border-color: var(--gold-dark); color: #fff; }
 
-/* slide indicators: the active one fills over 6 seconds */
 .hero-dots { position: absolute; z-index: 3; bottom: 2.2rem; left: 50%; transform: translateX(-50%); display: flex; gap: 0.7rem; }
 .hero-dots button { position: relative; width: 52px; height: 18px; display: grid; align-items: center; }
 .hero-dots button::before { content: ''; height: 2px; width: 100%; background: rgba(255, 255, 255, 0.4); }

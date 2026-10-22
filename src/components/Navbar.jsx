@@ -27,8 +27,7 @@ export default function Navbar() {
   }, [open]);
 
   return (
-    <header className={`header ${scrolled ? 'scrolled' : ''}`} id="home">
-      <div className="container nav">
+    <header className={`header ${scrolled ? 'scrolled' : 'over-hero'}`} id="home">      <div className="container nav">
         <button className="menu-btn" onClick={() => setOpen(true)} aria-label="Open menu">
           <Menu size={22} />
         </button>

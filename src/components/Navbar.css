@@ -28,3 +28,9 @@
   .logo strong { font-size: 1.3rem; }
   .nav-cta { padding: 0.6rem 0.9rem; font-size: 0.68rem; }
 }
+
+.header.over-hero { background: transparent; backdrop-filter: none; color: #fff; }
+.header.over-hero .logo small { color: rgba(255, 255, 255, 0.8); }
+.header.over-hero .nav-links a::after { background: #fff; }
+.header.over-hero .nav-cta { background: transparent; border-color: rgba(255, 255, 255, 0.9); }
+.header.over-hero .nav-cta:hover { background: #fff; color: var(--ink); }

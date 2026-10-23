@@ -15,7 +15,7 @@ export default function GiftsSection() {
           Find a Gift <ArrowRight size={16} />
         </a>
       </Reveal>
-      <Media src="/images/gifts.jpg" alt="Gift-wrapped jewellery" className="gift-img" />
+      <Media src="/images/gifts.png" alt="Gift-wrapped jewellery" className="gift-img" />
     </section>
   );
 }

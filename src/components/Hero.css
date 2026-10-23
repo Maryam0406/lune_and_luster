@@ -1,8 +1,11 @@
+/* Full-screen hero. There is no announcement bar now, so it is exactly one screen tall.
+   It slides up underneath the transparent navbar (76px, 66px on mobile).
+   If you ever bring the announcement bar back, use: height: calc(100svh - 36px); */
 .hero {
   position: relative;
-  height: calc(100vh - 36px);
-  height: calc(100svh - 36px);
-  min-height: 560px;
+  height: 100vh;
+  height: 100svh;
+  min-height: 520px;
   margin-top: -76px;
   overflow: hidden;
   background: #2b2622;
@@ -11,11 +14,19 @@
   place-items: center;
 }
 
-.hero-img { position: absolute !important; inset: 0; opacity: 0; transition: opacity 1.4s ease; }
-.hero-img.active { opacity: 1; }
-.hero-img img { transform: scale(1.1); transition: transform 8s ease-out; }
-.hero-img.active img { transform: scale(1); }   /* slow zoom-out */
+/* ---- Slide from right to left ---- */
+.hero-img { position: absolute !important; inset: 0; will-change: transform; }
+.hero-img.waiting { transform: translateX(100%); transition: none; }          /* parked on the right */
+.hero-img.active  { transform: translateX(0);     transition: transform 1.2s cubic-bezier(0.77, 0, 0.18, 1); }  /* slides in */
+.hero-img.leaving { transform: translateX(-100%); transition: transform 1.2s cubic-bezier(0.77, 0, 0.18, 1); }  /* slides out left */
 
+/* slow zoom-out on the slide that is showing */
+.hero-img img { transform: scale(1.1); transition: transform 8s ease-out; }
+.hero-img.active img { transform: scale(1); }
+.hero-img.leaving img { transform: scale(1); transition: none; }
+.hero-img.waiting img { transition: none; }
+
+/* dark gradient so white text stays readable on any photo */
 .hero-shade {
   position: absolute; inset: 0; pointer-events: none;
   background:
@@ -32,17 +43,17 @@
 .hero h1 {
   font-family: var(--serif);
   font-weight: 500;
-  font-size: clamp(2.6rem, 6.5vw, 5.4rem);
-  line-height: 1.05;
-  max-width: 14ch;
-  margin: 0 auto 2rem;
+  font-size: clamp(1.8rem, 4vw, 3.4rem);
+  line-height: 1.1;
+  max-width: 20ch;
+  margin: 0 auto 1.8rem;
   text-shadow: 0 2px 24px rgba(0, 0, 0, 0.25);
 }
 
 .hero-buttons { display: flex; gap: 0.9rem; justify-content: center; flex-wrap: wrap; }
 .hero-btn {
-  padding: 0.95rem 2rem;
-  font-size: 0.72rem;
+  padding: 0.85rem 1.8rem;
+  font-size: 0.68rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   border: 1px solid rgba(255, 255, 255, 0.9);
@@ -53,6 +64,7 @@
 .hero-btn-fill { background: var(--gold); border-color: var(--gold); }
 .hero-btn-fill:hover { background: var(--gold-dark); border-color: var(--gold-dark); color: #fff; }
 
+/* slide indicators: the active one fills over 6 seconds */
 .hero-dots { position: absolute; z-index: 3; bottom: 2.2rem; left: 50%; transform: translateX(-50%); display: flex; gap: 0.7rem; }
 .hero-dots button { position: relative; width: 52px; height: 18px; display: grid; align-items: center; }
 .hero-dots button::before { content: ''; height: 2px; width: 100%; background: rgba(255, 255, 255, 0.4); }

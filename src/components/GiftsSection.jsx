@@ -2,9 +2,9 @@ import { ArrowRight } from 'lucide-react';
 import Media from './Media';
 import Reveal from './Reveal';
 import { whatsappLink } from '../config';
-import './GiftSection.css';
+import './GiftsSection.css';
 
-export default function GiftSection() {
+export default function GiftsSection() {
   return (
     <section className="gift" id="gifts">
       <Reveal className="gift-text">

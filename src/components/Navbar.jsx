@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-import { Menu, X, MessageCircle } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { whatsappLink } from '../config';
 import './Navbar.css';
 
 const links = [
   { label: 'Home', href: '#home' },
-  { label: 'Collections', href: '#categories' },
-  { label: 'Make It Yours', href: '#make-it-yours' },
+  { label: 'Behind the Brand', href: '#brand' },
+  { label: 'Categories', href: '#categories' },
   { label: 'Gifts', href: '#gifts' },
   { label: 'Contact', href: '#contact' },
 ];
@@ -23,11 +23,13 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
+    //prevents the main page from scrolling while the mobile menu is open
     document.body.style.overflow = open ? 'hidden' : '';
   }, [open]);
 
   return (
-    <header className={`header ${scrolled ? 'scrolled' : 'over-hero'}`} id="home">      <div className="container nav">
+    <header className={`header ${scrolled ? 'scrolled' : 'over-hero'}`} id="home">      
+    <div className="container nav">
         <button className="menu-btn" onClick={() => setOpen(true)} aria-label="Open menu">
           <Menu size={22} />
         </button>
@@ -42,7 +44,7 @@ export default function Navbar() {
         </ul>
 
         <a href={whatsappLink()} target="_blank" rel="noreferrer" className="btn btn-gold nav-cta">
-          <MessageCircle size={16} /> Enquire
+          Enquire
         </a>
       </div>
 

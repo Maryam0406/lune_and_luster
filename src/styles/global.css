@@ -10,12 +10,13 @@
   --muted: #7a6f66;
   --serif: 'Cormorant Garamond', Georgia, serif;
   --sans: 'Jost', system-ui, sans-serif;
+  --script: 'Great Vibes', cursive;
   --container: 1280px;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 14px; scroll-behavior: smooth; scroll-padding-top: 80px; }
-body { font-family: var(--sans); background: var(--ivory); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; text-transform: uppercase; letter-spacing: 0.03em; }
+body { font-family: var(--sans); background: white; color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; text-transform: uppercase; letter-spacing: 0.03em; }
 h1, h2, h3, h4 { letter-spacing: 0.04em; }
 .keep-case { text-transform: none; } 
 img { display: block; max-width: 100%; }

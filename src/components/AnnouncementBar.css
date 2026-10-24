@@ -1,5 +1,0 @@
-.announce { background: var(--gold); color: #fff; overflow: hidden; height: 36px; display: flex; align-items: center; }
-.announce-track { display: flex; gap: 4rem; white-space: nowrap; width: max-content; animation: scroll 40s linear infinite; }
-.announce-track span { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; }
-.announce-track span::after { content: '\2726'; margin-left: 4rem; opacity: 0.7; }
-@keyframes scroll { to { transform: translateX(-50%); } }

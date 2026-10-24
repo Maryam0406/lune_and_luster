@@ -1,6 +1,3 @@
-/* Full-screen hero. There is no announcement bar now, so it is exactly one screen tall.
-   It slides up underneath the transparent navbar (76px, 66px on mobile).
-   If you ever bring the announcement bar back, use: height: calc(100svh - 36px); */
 .hero {
   position: relative;
   height: 100vh;
